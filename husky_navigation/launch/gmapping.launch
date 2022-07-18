@@ -25,7 +25,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 -->
 <launch>
 
-  <arg name="scan_topic" default="scan" />
+  <arg name="scan_topic" default="/front/scan" />
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
     <rosparam>
@@ -33,11 +33,11 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       base_frame: base_link
       map_frame: map
 
-      map_update_interval: 0.5 # Publish new map
+      map_update_interval: 0.1 # Publish new map
 
       maxUrange: 5.5 # Should be just less than sensor range
       maxRange: 6.1 # Should be just greater than sensor range
-      particles: 100 # Increased from 80
+      particles: 10 # 100 # Increased from 80
 
       # Update frequencies
       linearUpdate: 0.3
@@ -50,7 +50,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       ymin: -100.0
       xmax: 100.0
       ymax: 100.0
-      delta: 0.05
+      delta: 0.1
 
       # All default
       sigma: 0.05
