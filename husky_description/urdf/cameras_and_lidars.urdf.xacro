@@ -8,13 +8,13 @@
 
   <!-- Camera -->
   <xacro:simple_camera camera_name="sim_camera1" parent_link="top_plate_link" >
-    <origin xyz="0.16 0.16 0.16" rpy="0 0 0" />
+    <origin xyz="0.0 0.0 0.54" rpy="0 0 0" />
   </xacro:simple_camera>
 
   <!-- LiDAR -->
   <xacro:if value="$(arg ae_lidar_enabled)">
     <xacro:ae_lidar_mount topic="/scan" prefix="ae_lidar1" parent_link="top_plate_link">
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+        <origin xyz="0.32 0.0 0.0" rpy="0 0 0" />
       </xacro:ae_lidar_mount>
   </xacro:if>
 
